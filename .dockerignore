@@ -1,0 +1,16 @@
+.badges
+.coverage
+.github
+.pytest_cache
+.venv
+.dockerignore
+.gitignore
+.pre-commit-config.yaml
+assets
+load-tests
+tests
+CHANGELOG.md
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+LICENSE
+READ.me
