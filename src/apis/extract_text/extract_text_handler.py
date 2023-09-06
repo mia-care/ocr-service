@@ -1,9 +1,9 @@
 import io
 import pytesseract
 from PIL import Image
-from fastapi import APIRouter, status, UploadFile, HTTPException
+from fastapi import APIRouter, Request, status, UploadFile, HTTPException
 
-from src.apis.schemas.message_schema import MessageResponse
+from src.schemas.message_schema import MessageResponse
 
 
 router = APIRouter()
@@ -21,12 +21,16 @@ allowed_mimetypes = {
     status_code=status.HTTP_200_OK,
     tags=["OCR"]
 )
-async def extract_text_handler(file: UploadFile):
+async def extract_text_handler(request: Request, file: UploadFile):
     """
-    TODO
+    Extracts text from an image if the image format is among those accepted.
     """
 
+    logger = request.state.logger
+
     if file.content_type not in allowed_mimetypes:
+        logger.warning('Recived file has a mimetype not allowed')
+
         raise HTTPException(
             status_code=400,
             detail="Recived file has a mimetype not allowed"

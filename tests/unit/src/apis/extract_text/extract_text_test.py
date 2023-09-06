@@ -1,4 +1,3 @@
-import os
 import pytest
 
 
@@ -10,15 +9,16 @@ import pytest
         ("image.jpeg", "image/jpeg"),
     ]
 )
-def test_200_extract_text(client, image_name, mimetype):
+def test_200_extract_text(test_client, image_name, mimetype):
     """
-    TODO
+    Returns a 200 status code and a message when a valid image file
+    is uploaded for text extraction.
     """
 
-    image_path = f"{os.getcwd()}/tests/unit/apis/extract_text/assets/{image_name}"
+    image_path = f"tests/unit/src/apis/extract_text/assets/{image_name}"
 
     with open(image_path, "rb") as image:
-        response = client.post(
+        response = test_client.post(
             "/extract-text",
             files={
                 "file": (image_name, image, mimetype)
@@ -39,15 +39,16 @@ def test_200_extract_text(client, image_name, mimetype):
         ("image.pdf", "application/pdf"),
     ]
 )
-def test_400_extract_text(client, image_name, mimetype):
+def test_400_extract_text(test_client, image_name, mimetype):
     """
-    TODO
+    Returns a 400 status code and an error message when an image file
+    with an unsupported mimetype is uploaded.
     """
 
-    image_path = f"{os.getcwd()}/tests/unit/apis/extract_text/assets/{image_name}"
+    image_path = f"tests/unit/src/apis/extract_text/assets/{image_name}"
 
     with open(image_path, "rb") as image:
-        response = client.post(
+        response = test_client.post(
             "/extract-text",
             files={
                 "file": (image_name, image, mimetype)
