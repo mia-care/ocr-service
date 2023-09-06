@@ -76,4 +76,4 @@ For answers to common questions about this code of conduct, see
 [homepage]: https://www.contributor-covenant.org
 [coc]: https://www.contributor-covenant.org/version/1/4/code-of-conduct.html
 [faq]: https://www.contributor-covenant.org/faq
-[mailto]: mailto:report@mia-pltaform.eu
+[mailto]: mailto:report@mia-platform.eu
