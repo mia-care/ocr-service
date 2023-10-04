@@ -1,0 +1,30 @@
+name: Checks
+
+on:
+  workflow_call:
+    inputs:
+      python-version:
+        default: 3.10
+        required: false
+        type: string
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Python ${{ inputs.python-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ inputs.python-version }}
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get install -y tesseract-ocr
+          make setup
+
+      - name: Linting
+        run: make lint
