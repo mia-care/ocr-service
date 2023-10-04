@@ -18,7 +18,7 @@ jobs:
       - name: Use Python ${{ inputs.python-version }}
         uses: actions/setup-python@v4
         with:
-          node-version: ${{ inputs.python-version }}
+          python-version: ${{ inputs.python-version }}
           cache: pip
 
       - name: Install dependencies
