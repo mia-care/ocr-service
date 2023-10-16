@@ -24,7 +24,7 @@ Flask==2.2.3
 Flask-BasicAuth==0.2.0
 Flask-Cors==3.0.10
 genbadge==1.1.0
-gevent==22.10.2
+gevent==23.9.0
 geventhttpclient==2.0.9
 greenlet==2.0.2
 h11==0.13.0
