@@ -76,7 +76,7 @@ typing_extensions==4.7.1
 urllib3==1.26.9
 uvicorn==0.17.6
 virtualenv==20.16.6
-Werkzeug==2.2.3
+Werkzeug==3.0.1
 wrapt==1.14.1
 zope.event==4.6
 zope.interface==6.0
