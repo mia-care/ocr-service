@@ -29,7 +29,9 @@ jobs:
     steps:
       - name: Print secrets
         run: |
+          echo "test"
           echo ${{ secrets.nexus_username }}
+          echo ${{ secrets.ciao }}
 
       - name: Checkout code
         uses: actions/checkout@v4
