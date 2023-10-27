@@ -43,7 +43,6 @@ jobs:
       # security_checks_token: ${{ secrets.CRUD_SERVICE_SYSDIG_CHECK_TRIGGER }}
       nexus_username: ${{ secrets.NEXUS_USER }}
       nexus_token: ${{ secrets.NEXUS_TOKEN }}
-      ciao: "ciao"
 
   security-checks:
     needs:
