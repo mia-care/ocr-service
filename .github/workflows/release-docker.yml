@@ -27,6 +27,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Print secrets
+        run: |
+          echo ${{ secrets.nexus_username }}
+
       - name: Checkout code
         uses: actions/checkout@v4
 
