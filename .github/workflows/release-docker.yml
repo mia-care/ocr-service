@@ -40,7 +40,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            nexus.mia-platform.eu/core/ocr-service
+            nexus.mia-platform.eu/mia-care/plugins/ocr-service
           tags: |
             type=ref,event=branch
             type=semver,pattern={{version}}
