@@ -50,4 +50,4 @@ jobs:
     with:
       version: main
     secrets:
-      security_checks_token: ${{ secrets.CRUD_SERVICE_SYSDIG_CHECK_TRIGGER }}
+      security_checks_token: ${{ secrets.SYSDIG_CHECK_TRIGGER }}
