@@ -8,4 +8,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-[MCRD-1171](https://makeitapp.atlassian.net/browse/MCRD-1171): Added github pipeline
+- Added github pipeline
