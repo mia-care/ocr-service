@@ -19,7 +19,6 @@ on:
       - "Dockerfile"
 
 jobs:
-
   checks:
     uses: ./.github/workflows/checks.yml
 

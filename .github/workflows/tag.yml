@@ -19,7 +19,7 @@ jobs:
     with:
       push: true
     secrets:
-      nexus_username: ${{ secrets.NEXUS_USER }}
+      nexus_username: ${{ secrets.NEXUS_USERNAME }}
       nexus_token: ${{ secrets.NEXUS_TOKEN }}
 
   release:
