@@ -1,3 +1,4 @@
+import os
 import io
 import pytesseract
 from PIL import Image
@@ -9,10 +10,12 @@ from src.schemas.message_schema import MessageResponse
 router = APIRouter()
 
 
-allowed_mimetypes = {
+default_mime_types = [
     "image/jpeg",
     "image/png"
-}
+]
+
+allowed_mimetypes = os.environ.get('ALLOWED_MIME_TYPES', default_mime_types)
 
 
 @router.post(
