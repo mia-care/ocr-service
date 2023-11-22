@@ -1,10 +1,5 @@
 # OCR Overview
-This is a simple OCR microservice written in Python using the [FastAPI](https://github.com/tiangolo/fastapi) framework and the [PyTesseract](https://github.com/madmaze/pytesseract) library, which is a wrapper for Google's [Tesseract OCR Engine](https://github.com/tesseract-ocr/tesseract). It's a standalone plugin that doesn't require configuration.
-
-## Limitations
-Currently, this microservice only supports image files with the following MIME types:
-- image/jpeg
-- image/png
+This is a simple OCR microservice written in Python using the [FastAPI](https://github.com/tiangolo/fastapi) framework and the [PyTesseract](https://github.com/madmaze/pytesseract) library, which is a wrapper for Google's [Tesseract OCR Engine](https://github.com/tesseract-ocr/tesseract).
 
 ## Examples
 To give an idea of how the microservice works, practical examples are given below.

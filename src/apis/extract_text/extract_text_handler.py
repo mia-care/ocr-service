@@ -1,3 +1,4 @@
+import os
 import io
 import pytesseract
 from PIL import Image
@@ -9,10 +10,12 @@ from src.schemas.message_schema import MessageResponse
 router = APIRouter()
 
 
-allowed_mimetypes = {
+default_mime_types = [
     "image/jpeg",
     "image/png"
-}
+]
+
+allowed_mime_types = os.environ.get('ALLOWED_MIME_TYPES', default_mime_types)
 
 
 @router.post(
@@ -28,12 +31,16 @@ async def extract_text_handler(request: Request, file: UploadFile):
 
     logger = request.state.logger
 
-    if file.content_type not in allowed_mimetypes:
-        logger.warning('Recived file has a mimetype not allowed')
+    if file.content_type not in allowed_mime_types:
+        logger.warning(
+            "Recived file has a mime type not allowed."
+            f"\n\tRecived file: {file.content_type}"
+            f"\n\tAllowed mime types: {allowed_mime_types}"
+        )
 
         raise HTTPException(
             status_code=400,
-            detail="Recived file has a mimetype not allowed"
+            detail="Recived file has a mime type not allowed"
         )
 
     contents = await file.read()

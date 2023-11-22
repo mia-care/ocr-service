@@ -2,14 +2,14 @@ import pytest
 
 
 @pytest.mark.parametrize(
-    "image_name,mimetype",
+    "image_name,mime_type",
     [
         ("image.png", "image/png"),
         ("image.jpg", "image/jpeg"),
         ("image.jpeg", "image/jpeg"),
     ]
 )
-def test_200_extract_text(test_client, image_name, mimetype):
+def test_200_extract_text(test_client, image_name, mime_type):
     """
     Returns a 200 status code and a message when a valid image file
     is uploaded for text extraction.
@@ -21,7 +21,7 @@ def test_200_extract_text(test_client, image_name, mimetype):
         response = test_client.post(
             "/extract-text",
             files={
-                "file": (image_name, image, mimetype)
+                "file": (image_name, image, mime_type)
             }
         )
 
@@ -33,16 +33,16 @@ def test_200_extract_text(test_client, image_name, mimetype):
 
 
 @pytest.mark.parametrize(
-    "image_name,mimetype",
+    "image_name,mime_type",
     [
         ("image.bmp", "image/bmp"),
         ("image.pdf", "application/pdf"),
     ]
 )
-def test_400_extract_text(test_client, image_name, mimetype):
+def test_400_extract_text(test_client, image_name, mime_type):
     """
     Returns a 400 status code and an error message when an image file
-    with an unsupported mimetype is uploaded.
+    with an unsupported mime_type is uploaded.
     """
 
     image_path = f"tests/unit/src/apis/extract_text/assets/{image_name}"
@@ -51,11 +51,11 @@ def test_400_extract_text(test_client, image_name, mimetype):
         response = test_client.post(
             "/extract-text",
             files={
-                "file": (image_name, image, mimetype)
+                "file": (image_name, image, mime_type)
             }
         )
 
     assert response.status_code == 400
     assert response.json() == {
-        "detail": "Recived file has a mimetype not allowed"
+        "detail": "Recived file has a mime type not allowed"
     }
