@@ -40,7 +40,7 @@ async def extract_text_handler(request: Request, file: UploadFile):
 
         raise HTTPException(
             status_code=400,
-            detail="Recived file has a mimetype not allowed"
+            detail="Recived file has a mime type not allowed"
         )
 
     contents = await file.read()
