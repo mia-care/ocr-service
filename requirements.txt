@@ -64,7 +64,7 @@ python-dotenv==0.21.0
 python-multipart==0.0.5
 PyYAML==6.0
 pyzmq==25.0.2
-requests==2.27.1
+requests==2.31.0
 roundrobin==0.0.4
 six==1.16.0
 sniffio==1.2.0
