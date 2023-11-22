@@ -19,6 +19,9 @@ app = FastAPI(
     redoc_url=None
 )
 
+# The Swagger Aggregator is compatible with 3.0.X OpenAPI schemas versions
+app.openapi_version="3.0.2"
+
 # Middlewares
 app.add_middleware(LoggerMiddleware)
 
