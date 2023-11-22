@@ -55,7 +55,7 @@ pydantic-extra-types==2.0.0
 pydantic-settings==2.0.2
 pydantic_core==2.4.0
 pyflakes==3.0.1
-Pygments==2.13.0
+Pygments==2.15.0
 pylint==2.15.5
 pyparsing==3.0.9
 pytesseract==0.3.10
