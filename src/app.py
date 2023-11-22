@@ -11,9 +11,7 @@ from src.apis.core.checkup import checkup_handler
 from src.apis.extract_text import extract_text_handler
 
 
-print("=" * 10, '\n', os.environ, '\n', "=" * 10)
 load_dotenv('default.env')
-print("=" * 10, '\n', os.environ, '\n', "=" * 10)
 
 app = FastAPI(
     openapi_url="/documentation/json",
