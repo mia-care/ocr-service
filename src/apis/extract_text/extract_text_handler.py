@@ -31,6 +31,8 @@ async def extract_text_handler(request: Request, file: UploadFile):
 
     logger = request.state.logger
 
+    print('allowed_mimetypes', allowed_mimetypes)
+
     if file.content_type not in allowed_mimetypes:
         logger.warning('Recived file has a mimetype not allowed')
 
