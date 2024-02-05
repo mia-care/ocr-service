@@ -16,7 +16,7 @@ defusedxml==0.7.1
 dill==0.3.6
 distlib==0.3.6
 exceptiongroup==1.0.0
-fastapi==0.104.1
+fastapi==0.109.1
 filelock==3.8.0
 flake8==6.0.0
 flake8-html==0.4.2
